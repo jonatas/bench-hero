@@ -8,7 +8,7 @@ require 'net/ssh'
 #   Bench::Machine.add_remote_database_server(host: "benchdb")
 #
 class Bench::Machine < ActiveRecord::Base
-  self.table_name = 'benchmark_machine'
+  self.table_name = 'benchmark_machines'
 
   # Creates `benchmark_results` table if it doesn't exists
   def self.setup! force: false
