@@ -28,6 +28,7 @@ class Bench::Result < ActiveRecord::Base
         t.timestamp :time, null: false, default: 'now()'
         t.string :target, :chunk_time, :log_interval, :use_case, null: false
         t.integer :scale, :workers, :duration, :batch_size, null: false
+        t.integer :client_id, :server_id, null: false
         t.timestamp :started, :ended, null: false
         t.float :row_rate, :metric_rate, null: false
       end

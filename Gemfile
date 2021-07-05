@@ -13,3 +13,5 @@ gem "composite_primary_keys", "~> 13.0"
 gem "dotenv", "~> 2.7"
 
 gem "pg", "~> 1.2"
+
+gem "net-ssh", "~> 6.1"
