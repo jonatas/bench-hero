@@ -1,8 +1,12 @@
 require "json"
 require 'pathname'
 
-class ResultsFileParser
-
+# Helps to parse tsbs file results
+#
+# @example
+#   parser = Bench::ResultsFileParser.new "spec/support/fixtures/results/timescaledb/4h_10s_cpu-only_4000_16w"
+#   pp parser.attributes
+class Bench::Parser
   ## Example of JSON input
   # {"ResultFormatVersion"=>"0.1",
   #  "RunnerConfig"=>
@@ -78,5 +82,3 @@ class ResultsFileParser
     @workers = @workers[0..-2].to_i
   end
 end
-parser = ResultsFileParser.new "spec/support/fixtures/results/timescaledb/4h_10s_cpu-only_4000_16w"
-pp parser.attributes

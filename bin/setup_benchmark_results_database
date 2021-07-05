@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "bench/hero"
+
+raise "Create a .env with PG_URI before continue!" unless File.exists?(".env")
+
+ActiveRecord::Base.logger = Logger.new(STDOUT, datetime_format: "%Y-%m-%d %H:%M:%S")
+ActiveRecord::Base.verbose_query_logs = true
+
+Bench::Hero.setup! force: ARGV.any?{|e|e == "-f" || "--force"}

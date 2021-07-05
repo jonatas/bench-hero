@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "bench/hero"
+
+if ARGV.empty?
+  puts "Use a list of files to insert:"
+  puts "bin/bench-hero-digest spec/support/fixtures/results/timescaledb/4h_10s_cpu-only_4000_16w"
+end
+
+Bench::Hero.digest! *ARGV

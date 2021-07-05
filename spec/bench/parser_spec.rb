@@ -1,7 +1,8 @@
-RSpec.describe ResultsFileParser do
+RSpec.describe Bench::Parser do
   let(:filename) { "spec/support/fixtures/results/timescaledb/4h_10s_cpu-only_4000_16w" }
 
-  subject(:parser) {ResultsFileParser.new filename }
+  subject(:parser) {described_class.new filename }
+
   describe '#attributes' do
     it 'includes file into attributes' do
       expect(parser.attributes).to eq({

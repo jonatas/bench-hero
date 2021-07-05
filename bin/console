@@ -3,9 +3,10 @@
 require "bundler/setup"
 require "bench/hero"
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
+# Ruby playground with all classes included. Connection is also already
+# established depending on  your .env file.
 
-# (If you use this, don't forget to add pry to your Gemfile!)
+Bench::Hero.connect!
+
 require "pry"
 Pry.start
